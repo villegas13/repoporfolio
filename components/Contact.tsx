@@ -6,19 +6,18 @@ const Contact: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // 1. Configuración de tu correo electrónico
-    const myEmail = "tu-correo@ejemplo.com"; // Pon aquí tu dirección real
+    // 1. Configuración de tu número de WhatsApp (usa el código de país sin el símbolo +)
+    const phoneNumber = "584129297604"; 
     
-    // 2. Definir el asunto y el cuerpo del mensaje
-    const subject = encodeURIComponent(`Nuevo mensaje de: ${formData.name}`);
-    const body = encodeURIComponent(
-      `Nombre: ${formData.name}\n` +
-      `Email del remitente: ${formData.email}\n\n` +
-      `Mensaje:\n${formData.message}`
-    );
+    // 2. Estructura del mensaje con formato para WhatsApp
+    const text = `*Nuevo Mensaje del Portafolio*\n\n` +
+                 `*Nombre:* ${formData.name}\n` +
+                 `*Email:* ${formData.email}\n` +
+                 `*Mensaje:* ${formData.message}`;
 
-    // 3. Crear el enlace mailto y ejecutarlo
-    window.location.href = `mailto:${myEmail}?subject=${subject}&body=${body}`;
+    // 3. Crear la URL de la API de WhatsApp y abrirla en una nueva pestaña
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+    window.open(whatsappUrl, '_blank');
 
     // Opcional: Limpiar el formulario después de enviar
     setFormData({ name: '', email: '', message: '' });
@@ -46,7 +45,6 @@ const Contact: React.FC = () => {
                   className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-blue-500 outline-none transition-all"
                   placeholder="Tu nombre aquí"
                   required
-                  disabled="disabled"
                 />
               </div>
               <div className="space-y-2">
@@ -58,7 +56,6 @@ const Contact: React.FC = () => {
                   className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-blue-500 outline-none transition-all"
                   placeholder="correo@ejemplo.com"
                   required
-                  disabled="disabled"
                 />
               </div>
               <div className="space-y-2">
@@ -70,18 +67,16 @@ const Contact: React.FC = () => {
                   className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-blue-500 outline-none transition-all resize-none"
                   placeholder="Cuéntame sobre tus requerimientos..."
                   required
-                  disabled="disabled"
                 ></textarea>
               </div>
               
-              {/* Botón actualizado para correo electrónico */}
+              {/* Botón actualizado para WhatsApp con color característico y nuevo icono */}
               <button 
                 type="submit"
-                className="w-full bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 transition-all shadow-xl shadow-blue-900/20 flex items-center justify-center gap-2"
-                disabled="disabled"
-                              >
-                <i className="fa-solid fa-envelope text-xl"></i>
-                Enviar correo electrónico
+                className="w-full bg-[#25D366] text-white font-bold py-4 rounded-xl hover:bg-[#20ba5a] transition-all shadow-xl shadow-green-900/20 flex items-center justify-center gap-2"
+              >
+                <i className="fa-brands fa-whatsapp text-xl"></i>
+                Enviar por WhatsApp
               </button>
             </form>
           </div>
