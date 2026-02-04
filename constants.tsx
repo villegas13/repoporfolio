@@ -12,7 +12,7 @@ export const SKILLS: Skill[] = [
   { name: 'JavaScript (ES6+)', category: 'Frontend', icon: 'fa-brands fa-js', level: 80 },
   { name: 'WordPress',  category: 'CMS',  level: 90, icon: 'fa-brands fa-wordpress'},
   { name: 'Git / GitHub', category: 'Tools', icon: 'fa-brands fa-github', level: 90 },
-  
+  { name: "Inteligencia Artificial",  category: "Innovación",  level: 85, icon: "fa-solid fa-robot" }
   
 ];
 

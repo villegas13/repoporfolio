@@ -58,6 +58,10 @@ const Hero: React.FC = () => {
               <i className="fa-brands fa-wordpress text-xl"></i>
               <span className="font-mono text-sm">WordPress</span>
             </div>
+            <div className="flex items-center gap-2">
+              <i className="fa-solid fa-microchip text-xl"></i>
+              <span className="font-mono text-sm">IA Integration</span>
+            </div>
           </div>
         </div>
       </div>
