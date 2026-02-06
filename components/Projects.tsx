@@ -20,7 +20,14 @@ const Projects: React.FC = () => {
       url: 'https://quehacerfiscal.com/',
       image: 'web3.png',
       tags: ['WordPress', 'MySQL']
-    }
+    },
+    {
+      name: 'Acciones Telmex',
+      url: 'https://www.accionestelmex.net/',
+      image: 'web4.png',
+      tags: ['WordPress', 'MySQL']
+    }   
+
   ];
 
   return (
