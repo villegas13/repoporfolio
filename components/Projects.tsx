@@ -68,7 +68,7 @@ const Projects: React.FC = () => {
                     <i className="fa-solid fa-arrow-up-right-from-square text-white text-2xl"></i>
                   </div>
                 </a>
-              </div>
+              </div> 
               
               <div className="flex gap-2 mb-3">
                 {project.tags.map(tag => (
